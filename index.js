@@ -30,12 +30,11 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// var port = 8080;
 var port = process.env.PORT || 5000;
 var router = express.Router();
 
 app.get("/", function(req, res) {
-  res.render("index.ejs", {port});
+  res.render("index.ejs");
 });
 
 router.get("/messages", async function(req, res) {
